@@ -1,0 +1,78 @@
+@import "../../styles/media.scss";
+
+.itemLink {
+    font-weight: 400;
+    font-size: 1rem;
+
+    &:hover {
+        color: #478BF9;
+    }
+
+    transition: all 0.4s;
+
+    @media (max-width: #{$md3 + px }) {
+        border-radius: 28px;
+        border: 2px solid var(--main-blue-478-bf-9, #478BF9);
+        background: var(--main-navy-blue-110-a-1-d, #110A1D);
+        display: block;
+        width: 100%;
+        height: 3.125rem;
+        padding: 13px 20px;
+    }
+
+
+}
+
+@media (max-width:#{$md3 + px }) {
+    .burger.active:after {
+        bottom: 9px;
+        transform: rotate(45deg);
+    }
+
+    .burger.active span {
+        transform: scale(0);
+        transition: all 0.3s ease 0s;
+    }
+
+    .burger.active:before {
+        top: 9px;
+        transform: rotate(-45deg);
+    }
+
+    .burger {
+        display: block;
+        position: relative;
+        flex: 0 0 30px;
+        height: 20px;
+        z-index: 5;
+        // @include adaptive-value("margin-left", 32, 15, 1);
+    }
+
+    .burger:after,
+    .burger:before {
+        content: '';
+        background: #fff;
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        left: 0;
+        transition: all 0.3s ease 0s;
+    }
+
+    .burger:before {
+        top: 0;
+    }
+
+    .burger:after {
+        bottom: 0;
+    }
+
+    .burger span {
+        position: absolute;
+        background: #fff;
+        left: 0;
+        height: 2px;
+        width: 100%;
+        top: 9px;
+    }
+}
